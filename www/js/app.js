@@ -32,6 +32,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('cadastro', {
+    url: '/cadastro',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/cadastro.html',
+        controller: 'DashCtrl'
+      }
+    }
+  })
+
   $urlRouterProvider.otherwise('/login');
 
 });
