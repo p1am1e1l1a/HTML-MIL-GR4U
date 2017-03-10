@@ -42,6 +42,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+
+   .state('tarefas', {
+    url: '/tarefas',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/tarefas.html',
+        controller: 'DashCtrl'
+      }
+    }
+  })
+
   $urlRouterProvider.otherwise('/login');
 
 });
