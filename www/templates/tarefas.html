@@ -2,16 +2,8 @@
     <ion-content>
 
 <ul class="list">
-    <li class="item">
-      Tarefe 1
-    </li>
-
-   <li class="item">
-      Tarefa 2
-    </li>
-
-    <li class="item">
-    Tarefa 3
+    <li class="item" ng-repeat="tarefa in tarefas">
+     {{tarefa.nome}}
     </li>
 </ul>
 

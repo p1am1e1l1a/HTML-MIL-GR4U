@@ -3,7 +3,7 @@
  <div class="list">
     <label class="item item-input item-stacked-label">
         <span class="input-label">E-mail</span>
-        <input type="text" placeholder="John">
+        <input type="text" placeholder="E-mail" ng-model="email">
     </label>
     <label class="item item-input item-stacked-label">
         <span class="input-label">Nome</span>
@@ -11,17 +11,16 @@
     </label>
  <label class="item item-input item-stacked-label">
         <span class="input-label">Senha</span>
-        <input type="password" placeholder="Suhr">
+        <input type="password" placeholder="Senha" ng-model="senha">
     </label>
 
 </div>
 
     
 
-    <a class="button button-block button-positive" href="#/cadastro">
-        Cadastrar
-    </a>
-
+   <button class="button button-block button-positive" ng-click="novoCadastro(email, senha)">
+       Cadastrar
+    </button>
 
     </ion-content>
 </ion-view>
