@@ -8,7 +8,7 @@ var config = {
     storageBucket: "html-mil-grau.appspot.com",
     messagingSenderId: "906905468037"
   };
-  firebase.initializeAPP(confg);
+  firebase.initializeApp(config);
 
 return {
   get: function() {
@@ -19,27 +19,39 @@ return {
 })
 .factory('Login', function(Context) {
   return {
-    login: function(email, senha) {
-firebase.auth().signInwithEmailAndPassword(email, senha)
+    login: function(email, senha, callback) {
+firebase.auth().signInWithEmailAndPassword(email, senha)
 .then(function() {
   callback();
 })
 
-.cath(function(error) {
+.catch(function(error) {
   callback(error);
 });
 
     },
-    novo: function(email, senha) {
+    novo: function(email, senha, callback) {
 firebase.auth().createUserWithEmailAndPassword(email, senha)
 .then(function() {
   callback();
 })
 
-.cath(function(error) {
+.catch(function(error) {
   callback(error)
     });
     }
   };
 })
+
+.factory('Tarefas', function(Context) {
+  return {
+    get: function(callback) {
+      firebase.database().ref('tarefas').on('value', function(snapshot){
+        callback(snapshot.val());
+
+      })
+    }
+  }
+})
+
 //Context.get()
